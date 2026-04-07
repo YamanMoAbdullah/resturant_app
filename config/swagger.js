@@ -9,8 +9,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://resturant-app-z9i0.onrender.com',
-      description: 'Production server (Render)'
+      url: 'https://resturant-app-teal.vercel.app',
+      description: 'Production server (Vercel)'
     },
     {
       url: 'http://localhost:3000',
