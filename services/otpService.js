@@ -29,9 +29,15 @@ async function createAndSendOTP(email) {
   await EmailVerification.deleteMany({ email });
   // ends after 10 minutes
   const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
-  await EmailVerification.create({ email, otpCode, expiresAt });
+  const newVerification = await EmailVerification.create({ email, otpCode, expiresAt });
 
-  await sendOTPEmail(email, otpCode);
+  try {
+    await sendOTPEmail(email, otpCode);
+  } catch (error) {
+    console.error(`Error sending OTP to ${email}:`, error);
+    await EmailVerification.deleteOne({ _id: newVerification._id });
+    throw new Error('Failed to send verification email, please try again later');
+  }
 }
 
 module.exports = {

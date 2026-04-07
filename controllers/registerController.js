@@ -3,6 +3,7 @@ const User = require('../models/user');
 const { createAndSendOTP } = require('../services/otpService');
 
 module.exports.register_post = async (req, res, next) => {
+    let newUser;
     try {
         const { name, password, confirmPassword, email} = req.body;
 
@@ -10,13 +11,16 @@ module.exports.register_post = async (req, res, next) => {
             return res.status(400).json({ message: 'Password and confirm password do not match' });
         }
 
-        const newUser = await User.create({ name, hashPassword: password, email});
+        newUser = await User.create({ name, hashPassword: password, email});
 
         await createAndSendOTP(newUser.email);
 
         res.status(201).json( {message: 'Otp sent to email, Please verify to complete registeration'});
     }
     catch(err) {
+        if (newUser) {
+            await User.deleteOne({ _id: newUser._id });
+        }
         next(err);
     }
 }
