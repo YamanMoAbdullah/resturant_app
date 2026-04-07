@@ -9,7 +9,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://restaurant-node-js.onrender.com',
+      url: 'https://resturant-app-z9i0.onrender.com',
       description: 'Production server (Render)'
     },
     {
@@ -22,7 +22,7 @@ const swaggerDefinition = {
       bearerAuth: {
         type: 'http',
         scheme: 'bearer',
-        bearerFormat: 'JWT' 
+        bearerFormat: 'JWT'
       }
     }
   },
@@ -35,7 +35,7 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ['./routes/*.js'] 
+  apis: ['./routes/*.js']
 };
 
 const swaggerSpec = swaggerJSDoc(options);
