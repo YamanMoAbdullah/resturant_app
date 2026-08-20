@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="لقمة وراحة — وجبات شهية وتجربة طلب بسيطة للعائلة." />
+    <title>لقمة وراحة | مطعم عائلي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="لقمة وراحة - الرئيسية">
+          <span class="brand-mark">ل</span>
+          <span><strong>لقمة</strong><small>وَراحة</small></span>
+        </a>
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a class="active" href="#menu">القائمة</a>
+          <a href="#offers">العروض</a>
+          <a href="#about">عن المطعم</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="البحث" data-action="search">⌕</button>
+          <button class="cart-button" type="button" data-action="cart" aria-label="فتح السلة">
+            <span class="cart-icon">🛒</span><span>السلة</span><b id="cart-count">0</b>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <span class="eyebrow">وجبة تفرّح يومك</span>
+          <h1>أكل لذيذ،<br /><em>ومزاج ألذ.</em></h1>
+          <p>من مطبخنا لعائلتك — مكونات طازجة، نكهات محبوبة، ولقمة تجمعنا.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#menu">شوف القائمة <span>←</span></a>
+            <button class="play-button" type="button" data-action="video"><span>▶</span> كيف نطبخها؟</button>
+          </div>
+          <div class="hero-meta"><span><b>4.9</b> ★</span><span class="meta-divider"></span><span>+12,000 زبون مبسوط</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="sun-shape"></div>
+          <div class="hero-image-wrap"><img src="/images/hero-food.png" alt="برغر دجاج مقرمش مع البطاطا المقلية" /></div>
+          <div class="floating-note note-top"><span>طازج</span><small>كل يوم</small></div>
+          <div class="floating-note note-bottom"><strong>15</strong><span>دقيقة<br />توصيل</span></div>
+        </div>
+      </section>
+
+      <section class="category-section container" id="menu">
+        <div class="section-heading"><div><span class="eyebrow">اختار مزاجك</span><h2>شو نفسك اليوم؟</h2></div><a href="#all-menu">عرض الكل <span>←</span></a></div>
+        <div class="category-list" role="tablist" aria-label="تصنيفات القائمة">
+          <button class="category-card active" data-category="all" role="tab"><span class="category-icon yellow">🍔</span><strong>الكل</strong><small>24 صنف</small></button>
+          <button class="category-card" data-category="burger" role="tab"><span class="category-icon blue">🍔</span><strong>برغر</strong><small>8 أصناف</small></button>
+          <button class="category-card" data-category="pizza" role="tab"><span class="category-icon coral">🍕</span><strong>بيتزا</strong><small>6 أصناف</small></button>
+          <button class="category-card" data-category="sides" role="tab"><span class="category-icon mint">🍟</span><strong>إضافات</strong><small>5 أصناف</small></button>
+          <button class="category-card" data-category="drinks" role="tab"><span class="category-icon lavender">🥤</span><strong>مشروبات</strong><small>5 أصناف</small></button>
+        </div>
+      </section>
+
+      <section class="popular-section container" id="all-menu">
+        <div class="section-heading"><div><span class="eyebrow">الأكثر طلباً</span><h2>ناس كثير جربوها وحبوها</h2></div><button class="filter-button" type="button" data-action="filter">ترتيب حسب <span>⌄</span></button></div>
+        <div class="product-grid">
+          <article class="product-card" data-category="burger"><div class="product-image pink-bg"><span class="tag">الأكثر مبيعاً</span><img src="/images/hero-food.png" alt="برغر لقمة" /></div><div class="product-info"><div><h3>برغر لقمة</h3><p>دجاج مقرمش، جبنة، صوصنا الخاص</p></div><strong class="price">٢٨ <small>ر.س</small></strong></div><button class="add-button" data-add="برغر لقمة" data-price="28">+ أضف للسلة</button></article>
+          <article class="product-card" data-category="pizza"><div class="product-image blue-bg"><span class="tag new">جديد</span><img src="/images/hero-food.png" alt="بيتزا الخضار" /></div><div class="product-info"><div><h3>بيتزا الحارة</h3><p>موزاريلا، فلفل، زيتون، صوص طماطم</p></div><strong class="price">٣٦ <small>ر.س</small></strong></div><button class="add-button" data-add="بيتزا الحارة" data-price="36">+ أضف للسلة</button></article>
+          <article class="product-card" data-category="sides"><div class="product-image yellow-bg"><img src="/images/hero-food.png" alt="بطاطا لقمة" /></div><div class="product-info"><div><h3>بطاطا لقمة</h3><p>مقرمشة مع بهاراتنا السرية</p></div><strong class="price">١٢ <small>ر.س</small></strong></div><button class="add-button" data-add="بطاطا لقمة" data-price="12">+ أضف للسلة</button></article>
+        </div>
+      </section>
+
+      <section class="offer container" id="offers"><div><span class="eyebrow">عرض العائلة</span><h2>لمة حلوة<br />تحتاج لقمة.</h2><p>اطلب ٣ وجبات عائلية وخذ البطاطا والمشروبات علينا.</p><button class="secondary-button" type="button" data-action="offer">اطلب العرض <span>←</span></button></div><div class="offer-art"><span class="offer-sticker">وفر<br /><strong>25%</strong></span><img src="/images/hero-food.png" alt="وجبة عائلية من المطعم" /></div></section>
+    </main>
+
+    <footer class="site-footer" id="about"><div class="container footer-wrap"><div class="brand"><span class="brand-mark">ل</span><span><strong>لقمة</strong><small>وَراحة</small></span></div><p>نكهات بسيطة، ذكريات كبيرة.</p><div class="footer-links"><a href="mailto:hello@loqma.test">hello@loqma.test</a><span>مفتوح يومياً ١١ ص — ١٢ م</span></div></div></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
